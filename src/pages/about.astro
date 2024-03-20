@@ -1,6 +1,8 @@
 ---
 // The Astro frontmatter script only contains Javascript.
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 
 const pageTitle = "About me"
 
@@ -23,6 +25,7 @@ const skills = ["fighting", "coding", "writing", "fucking",]
 		<title>{pageTitle}</title>
 	</head>
 	<body>
+		<Header />
 		<h1>{pageTitle}</h1>
         <p>Welcome to my kingdom!</p>
         <p>I am {identity.firstName} from {identity.country}. 
@@ -35,5 +38,6 @@ const skills = ["fighting", "coding", "writing", "fucking",]
 		<ul>
 			{skills.map((skill) => <li>{skill}</li>)}
 		  </ul>
+		<Footer />
 	</body>
 </html>

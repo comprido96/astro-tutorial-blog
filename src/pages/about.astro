@@ -1,8 +1,7 @@
 ---
 // The Astro frontmatter script only contains Javascript.
 import '../styles/global.css';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "About me"
 
@@ -15,29 +14,16 @@ const identity = {
 
 const skills = ["fighting", "coding", "writing", "fucking",]
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<Header />
-		<h1>{pageTitle}</h1>
-        <p>Welcome to my kingdom!</p>
-        <p>I am {identity.firstName} from {identity.country}. 
-			I currently work as {identity.occupation} and I am 
-			passionate about web3 (Rust fanboy :)) ).</p>
-		{identity.hobbies.length > 2 && 
-		<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
-		}
-        <p>Something about my skills...</p>
-		<ul>
-			{skills.map((skill) => <li>{skill}</li>)}
-		  </ul>
-		<Footer />
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+	<p>Welcome to my kingdom!</p>
+	<p>I am {identity.firstName} from {identity.country}. 
+		I currently work as {identity.occupation} and I am 
+		passionate about web3 (Rust fanboy :)) ).</p>
+	{identity.hobbies.length > 2 && 
+	<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+	}
+	<p>Something about my skills...</p>
+	<ul>
+		{skills.map((skill) => <li>{skill}</li>)}
+	</ul>
+</BaseLayout>

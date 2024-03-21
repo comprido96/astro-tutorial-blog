@@ -1,4 +1,6 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
+
 title: "Once Upon a Time..."
 pubDate: 2024-03-20
 description: "My first blog post."
@@ -8,11 +10,6 @@ image:
     alt: "The full Astro logo."
 tags: ["astro", "blogging", "comprido"]
 ---
-
-# My First Blog Post
-
-Published on: 2024-03-20
-
 Welcome to my _kingdom_! Here, I will share my life journey.
 
 ## What I've accomplished
